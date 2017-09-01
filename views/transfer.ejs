@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet'>
+    <link href="../public/stylesheets/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
+   integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
+   crossorigin=""/>
+
+ <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"
+   integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
+   crossorigin=""></script>
+
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="title">FOOD COURT</h1>
+        <a href="login.html" class="btn-primary" style="float:right;">Log Out</a>
+      </div>
+    </header>
+  <main class="hero-section">
+    <div class="container">
+
+
+    <!--<h1 style="float:right;padding-top:10px;">Current Balance: 50 tokens</h1>
+    <h1 style="padding-top:10px;">Welcome To Your Wallet</h1>
+    <p> </p>-->
+
+
+
+    	<div class="nav" style="padding-top:50px;">
+        <p> SEND TOKENS TO  ACCOUNT</p>
+          <form method="POST" action="/home">
+            <div class="form-group">
+              <label>Send Tokens To Account :<input type="text"></input></label>
+             <p class="error-message"></p>
+
+            </div>
+            <div class="form-group">
+              <label>tokens :<input type="text"></input></label>
+             <p class="error-message"></p>
+
+            </div>
+
+            <button class="w3-button w3-border">Send Tokens</button>
+          </form>
+        </div>
+
+      <!--  <div class="nav" style="padding-top:50px;margin-bottom:50px;">
+          <p> RECIEVE MONEY FROM ANOTHER ACCOUNT</p>
+            <form method="POST" action="/home">
+              <div class="form-group">
+                <label>Recieve From Account :<input type="text"></input></label>
+               <p class="error-message"></p>
+
+              </div>
+              <div class="form-group">
+                <label>Ether :<input type="text"></input></label>
+               <p class="error-message"></p>
+
+              </div>
+              <button class="w3-button w3-border">Recieve From Account</button>
+            </form>
+          </div>-->
+
+
+      <div class="clearfix"></div>
+    </div>
+  </main>
+
+
+    </div>
+  </main>
+
+</body>
+</html>

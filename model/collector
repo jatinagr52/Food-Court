@@ -1,0 +1,17 @@
+var firebase = require('firebase');
+
+firebase.initializeApp({
+  apiKey: "AIzaSyD8bVeIajJkBAGa1fliiESlKj5FsIVKqbE",
+    authDomain: "food-court-9abb2.firebaseapp.com",
+    databaseURL: "https://food-court-9abb2.firebaseio.com",
+    projectId: "food-court-9abb2",
+    storageBucket: "food-court-9abb2.appspot.com",
+    messagingSenderId: "1047058137826"
+});
+var ref=firebase.database().ref('admin');
+var addRef= ref.child('adlogin');
+
+addRef.push({
+name: 'jatin',
+pswd: 'abcxyz'
+});

@@ -1,7 +1,8 @@
 <html>
   <head>
+
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet'>
-    <link href="../public/stylesheets/style.css" rel="stylesheet">
+    <link href="stylesheets/style.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
    integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
@@ -16,7 +17,7 @@
     <header>
       <div class="container">
         <h1 class="title">FOOD COURT</h1>
-          <a href="login.html" class="btn-primary" style="float:right;">Log In</a>
+
       </div>
     </header>
 
@@ -24,28 +25,41 @@
     <div class="section-content">
       <h2>Shop Registeration</h2>
 
-      <form method="POST" action="/signup">
+      <form method="POST" action="/register">
 
 
         <div class="form-group">
           <div class="form-group">
-                <label>Email ID<input type="text" ></input></label>
+                <label>Shop Name<input type="text" name="sname"></input></label>
                <p class="error-message"></p>
 
          </div><div class="form-group">
-               <label>Password<input type="text"></input></label>
+               <label>Shop Id<input type="text" name="sid"></input></label>
               <p class="error-message"></p>
 
         </div><div class="form-group">
-              <label>Name<input type="text"></input></label>
+              <label>Name<input type="text" name="name"></input></label>
              <p class="error-message"></p>
 
        </div><div class="form-group">
-             <label>Phone Number<input type="text"></input></label>
+             <label>Password<input type="password" name="password"></input></label>
             <p class="error-message"></p>
 
       </div>
-        <button class="w3-button w3-border">Sign Up</button>
+    <div class="form-group">
+       <label>Email<input type="text" name="email"></input></label>
+       <p class="error-message"></p>
+     </div>
+     <div class="form-group">
+        <label>Phone Number<input type="text" name="phn"></input></label>
+        <p class="error-message"></p>
+      </div>
+
+
+
+
+
+      <a href="success1" class="btn-primary" >Register</a>
       </form>
 
     </div>

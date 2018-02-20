@@ -1,7 +1,21 @@
 <html>
   <head>
+
+<script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD8bVeIajJkBAGa1fliiESlKj5FsIVKqbE",
+    authDomain: "food-court-9abb2.firebaseapp.com",
+    databaseURL: "https://food-court-9abb2.firebaseio.com",
+    projectId: "food-court-9abb2",
+    storageBucket: "",
+    messagingSenderId: "1047058137826"
+  };
+  firebase.initializeApp(config);
+</script>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet'>
-    <link href="../public/stylesheets/style.css" rel="stylesheet">
+    <link href="stylesheets/style.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
    integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
@@ -37,7 +51,7 @@
               <p class="error-message"></p>
 
         </div>
-        <button class="w3-button w3-border">Sign In</button>
+        <button class="w3-button w3-border" name="signin" >Sign In</button>
       </form>
     </div>
   </main>

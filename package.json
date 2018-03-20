@@ -11,10 +11,12 @@
     "debug": "~2.6.3",
     "ejs": "~2.5.6",
     "express": "~4.15.2",
-    "firebase": "^4.9.1",
+    "firebase": "^4.11.0",
+    "firebase-nodejs": "^1.0.1-1.1",
     "mongoose": "^4.11.11",
     "morgan": "~1.8.1",
-    "serve-favicon": "~2.4.2"
+    "serve-favicon": "~2.4.2",
+    "web3": "^1.0.0-beta.30"
   },
   "main": "app.js",
   "devDependencies": {},

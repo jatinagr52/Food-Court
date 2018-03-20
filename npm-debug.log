@@ -1,7 +1,5 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/home/hadoop/.nvm/versions/node/v6.10.1/bin/node',
-1 verbose cli   '/home/hadoop/.nvm/versions/node/v6.10.1/bin/npm',
-1 verbose cli   'start' ]
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'start' ]
 2 info using npm@3.10.10
 3 info using node@v6.10.1
 4 verbose run-script [ 'prestart', 'start', 'poststart' ]
@@ -9,25 +7,25 @@
 6 silly lifecycle food@0.0.0~prestart: no script for prestart, continuing
 7 info lifecycle food@0.0.0~start: food@0.0.0
 8 verbose lifecycle food@0.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle food@0.0.0~start: PATH: /home/hadoop/.nvm/versions/node/v6.10.1/lib/node_modules/npm/bin/node-gyp-bin:/home/hadoop/final/food/node_modules/.bin:/home/hadoop/Desktop/weather/mongo/bin:/home/hadoop/.nvm/versions/node/v6.10.1/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/local/hadoop/bin:/usr/local/sqoop/bin:/usr/local/hadoop/sbin:/usr/local/hive/bin:/usr/local/pig/bin:/usr/local/hbase/bin
-10 verbose lifecycle food@0.0.0~start: CWD: /home/hadoop/final/food
+9 verbose lifecycle food@0.0.0~start: PATH: /usr/lib/node_modules/npm/bin/node-gyp-bin:/home/jatz/final/food/Food-Court/node_modules/.bin:/home/jatz/bin:/home/jatz/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+10 verbose lifecycle food@0.0.0~start: CWD: /home/jatz/final/food/Food-Court
 11 silly lifecycle food@0.0.0~start: Args: [ '-c', 'node ./bin/www' ]
 12 silly lifecycle food@0.0.0~start: Returned: code: 1  signal: null
 13 info lifecycle food@0.0.0~start: Failed to exec start script
 14 verbose stack Error: food@0.0.0 start: `node ./bin/www`
 14 verbose stack Exit status 1
-14 verbose stack     at EventEmitter.<anonymous> (/home/hadoop/.nvm/versions/node/v6.10.1/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
+14 verbose stack     at EventEmitter.<anonymous> (/usr/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
 14 verbose stack     at emitTwo (events.js:106:13)
 14 verbose stack     at EventEmitter.emit (events.js:191:7)
-14 verbose stack     at ChildProcess.<anonymous> (/home/hadoop/.nvm/versions/node/v6.10.1/lib/node_modules/npm/lib/utils/spawn.js:40:14)
+14 verbose stack     at ChildProcess.<anonymous> (/usr/lib/node_modules/npm/lib/utils/spawn.js:40:14)
 14 verbose stack     at emitTwo (events.js:106:13)
 14 verbose stack     at ChildProcess.emit (events.js:191:7)
 14 verbose stack     at maybeClose (internal/child_process.js:886:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
 15 verbose pkgid food@0.0.0
-16 verbose cwd /home/hadoop/final/food
-17 error Linux 3.2.0-29-generic-pae
-18 error argv "/home/hadoop/.nvm/versions/node/v6.10.1/bin/node" "/home/hadoop/.nvm/versions/node/v6.10.1/bin/npm" "start"
+16 verbose cwd /home/jatz/final/food/Food-Court
+17 error Linux 4.4.0-116-generic
+18 error argv "/usr/bin/nodejs" "/usr/bin/npm" "start"
 19 error node v6.10.1
 20 error npm  v3.10.10
 21 error code ELIFECYCLE

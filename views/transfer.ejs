@@ -24,7 +24,22 @@
 
     </header>
   <main>
-    <div class="clearfix"></div>
+    <main class="container signup-section">
+      <div class="section-content">
+        <h2>Token Transfer</h2>
+
+        <form method="POST" action="/transfer">
+          <!-- <div class="form-group"> -->
+
+
+          <div class="form-group">
+                <label>Token<input type="text" name="token"></input></label>
+               <p class="error-message"></p>
+
+         </div>
+        <a href="success" class="btn-primary" >Transfer</a>
+        </form>
+    <!-- <div class="clearfix"></div>
 
       <div class="row">
         <div class="col-md-3">
@@ -145,6 +160,6 @@
      var res = a*10+b*50+c*100;
      document.getElementById("tot").innerHTML = res ;
    }
-   </script>
+   </script> -->
 </body>
 </html>

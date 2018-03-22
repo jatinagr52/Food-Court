@@ -8,11 +8,18 @@ var abi=[ { "constant": false, "inputs": [ { "name": "_spender", "type": "addres
 
 var addr="0x21d874d519f4277a7d46fd91616cc4f6238f8d93";
 
-var myContract= new myweb.eth.Contract(abi,'0x21d874d519f4277a7d46fd91616cc4f6238f8d93');
- //var myContract =new myweb.eth.Contract(abi).at(addr);
-//console.log(myweb.eth.Contract);
 
-//var myContract=new web3.eth.Contract(abi,)
+// var my=web3.eth.contract(abi);
+// var p=my.at(addr);
+//var myContract= new  myweb.eth.Contract(abi,addr);
+//var token= new myweb.eth.Contract(abi).at(addr);
+  var myContract=new myweb.eth.Contract(abi,addr);
+  //console.log(my.options);
+  //var myContract =new myweb.eth.Contract(abi).at(addr);
+//console.log(myweb.eth.Contract);
+  //var newCon=   myContract.at(addr);
+//var myContract=new myweb.eth.Contract(abi,addr,{from:myweb.eth.coinbase});
+//console.log(token);
 //console.log(myContract);
 firebase.initializeApp({
   apiKey: "AIzaSyD8bVeIajJkBAGa1fliiESlKj5FsIVKqbE",
@@ -26,7 +33,6 @@ var database = firebase.database();
 var ref=database.ref('shop');
 var addRef= ref.child('register');
 var refC=database.ref('Customer');
-
 
 
 router.get('/', function(req, res, next) {
@@ -60,6 +66,7 @@ router.post('/login',function(req,res,next){
     res.redirect('/collector');
   }
 });
+
 /* -------------------------------------------------------------run when connect-------------------*/
 // var newAcc;
 // refC.on('child_added',function(result){
@@ -96,26 +103,47 @@ router.post('/register',function(req,res,next){
  res.redirect('/login');
 });
 
-var myAddr;
+ var myAddr,myName;
 router.post('/transfer',function(req,res,next){
-  myContract.methods.balanceOf(myweb.eth.coinbase).call({from:myweb.eth.coinbase},function(err,res){
+
+  myContract.methods.balanceOf(myweb.eth.coinbase).call({from:"0x8c28785217433c45e0de9d18add7084146d3e48f"},function(err,res){
 
     console.log(res);
   });
-refC.on('value',function(res){
- myAddr=res.val();
-});
-myConract.transfer(myAddr.address,req.body.token).send({from:myweb.eth.coinbase},function(err,txhash){
-  console.log(err);
-});
+  refC.on('value',function(snapshot){
+ myAddr=snapshot.val().address;
 
- var transaction{
-   from: "admin",
-   to:
- }
+  });
+console.log(myAddr);
+//myweb.eth.personal.unlockAccount("0x8c28785217433c45e0de9d18add7084146d3e48f","jatin");
+myContract.methods.transferFrom("0x8c28785217433c45e0de9d18add7084146d3e48f",myAddr,req.body.token).send({from:"0x8c28785217433c45e0de9d18add7084146d3e48f"},function(err,txhash){
+  if(err){
+    console.log(err);
+    res.redirect('/transfer');
+  }
+else{
+  refC.on('value',function(snapshot){
 
-  // myWeb.personal.unlockAccount(myweb.eth.coinbase);
-  // console.log(myContract.balanceOf("0xfb09bbbefc159fa1490dec05aa7e97a8e69862f2"));
+  myName=snapshot.val().ID;
+  });
+  console.log(myName);
+ var transaction={
+    from: "admin",
+    to: myName,
+    value : req.body.token,
+    time : new Date(),
+    tx_info:txhash
+  };
+
+   res.render('success',{trans: transaction});
+}
+});
+myContract.methods.balanceOf(myAddr).call({from:"0x8c28785217433c45e0de9d18add7084146d3e48f"},function(err,result){
+  console.log(result);
+})
+
+
+
 
 });
 

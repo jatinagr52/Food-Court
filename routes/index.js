@@ -105,10 +105,9 @@ router.post('/register',function(req,res,next){
 
 
 
- 
-router.post('/transfer',function(req,res,next){
 
-  myContract.methods.balanceOf(myweb.eth.coinbase).call({from:"0x8c28785217433c45e0de9d18add7084146d3e48f"},function(err,res){
+router.post('/transfer',function(req,res,next){
+  myContract.methods.balanceOf("0x8c28785217433c45e0de9d18add7084146d3e48f").call({from:"0x8c28785217433c45e0de9d18add7084146d3e48f"},function(err,res){
 
     console.log(res);
   });
@@ -131,17 +130,12 @@ refC.on('value',function(snapshot){
   };
   res.render('success',{trans: transaction});
 });
-
+myContract.methods.balanceOf(snap.val().address).call({from:"0x8c28785217433c45e0de9d18add7084146d3e48f"},function(err,result){
+  console.log(result);
+});
 }
 });
 });
-myContract.methods.balanceOf(myAddr).call({from:"0x8c28785217433c45e0de9d18add7084146d3e48f"},function(err,result){
-  console.log(result);
-})
-
-
-
-
 });
 
 

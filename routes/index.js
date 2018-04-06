@@ -65,16 +65,15 @@ router.get('/success1',function(req,res,next){
 
 
 //saving address to newly added customer in database
-
-// refC.on('child_added',function(result){
-//      console.log(result.val());
-//     myweb.eth.personal.newAccount(result.val().password).then(function(resp,err){
-//         console.log("account created successfully"+ resp);
-//         refC.child(result.key).update({
-//          address:resp,
-//         });
-//     });
-// });
+refC.on('child_added',function(result){
+     console.log(result.val());
+    myweb.eth.personal.newAccount(result.val().password).then(function(resp,err){
+        console.log("account created successfully"+ resp);
+        refC.child(result.key).update({
+         address:resp,
+        });
+    });
+});
 
 
 // admin login
@@ -85,7 +84,7 @@ router.post('/login',function(req,res,next){
    }
 });
 
-
+//check whether user exists or not for foody transfer
 router.post('/collector',function(req,res,next){
    refC.on('value',function(snapshot){
       details= snapshot.val();
@@ -113,6 +112,7 @@ router.post('/collector',function(req,res,next){
   });
 });
 
+//register for new shops in food court
 router.post('/register',function(req,res,next){
     myweb.eth.personal.newAccount(req.body.password).then(function(res,err){
        addRef.push({
@@ -128,7 +128,7 @@ router.post('/register',function(req,res,next){
   res.redirect('/success1');
 });
 
-
+//transfer foody to particuler customer account
 router.post('/transfer',function(req,res,next){
    refC.on('value',function(snap){
         var newDetails=snap.val();

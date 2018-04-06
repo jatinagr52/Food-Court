@@ -19,13 +19,16 @@
   <body>
     <header>
       <div class="container">
-        <h1 class="title">Admin</h1>
+       <h1 class="title">Admin Balance:<%=tot.bal%> F</h1>
         <a href="login" class="btn-primary" style="float:right;">Log Out</a>
-      </div>
+
+       </div>
     </header>
   <main>
     <main class="container signup-section">
       <div class="section-content">
+
+
         <h2>Token Transfer</h2>
 
         <form method="POST" action="/transfer">
@@ -33,15 +36,18 @@
 
 
           <div class="form-group">
-                <label>Token<input type="text" name="token"></input></label>
+                <label>Foody<input type="text" name="token"></input></label>
+                <input type="hidden" name="myid" value="<%=tot.id%>"></input>
                <p class="error-message"></p>
 
          </div>
-        <button class="btn-primary" >Transfer</button>
+        <button class="btn-primary" type="submit" >Transfer</button>
         </form>
       </div>
     </main>
   </main>
+</body>
+</html>
     <!-- <div class="clearfix"></div>
 
       <div class="row">
@@ -164,5 +170,3 @@
      document.getElementById("tot").innerHTML = res ;
    }
    </script> -->
-</body>
-</html>

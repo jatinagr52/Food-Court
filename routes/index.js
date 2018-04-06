@@ -6,35 +6,39 @@ var web3 =require('web3');
 var myweb=new web3(new web3.providers.HttpProvider('http://localhost:8545'));
 var abi=[ { "constant": false, "inputs": [ { "name": "_spender", "type": "address" }, { "name": "_value", "type": "uint256" } ], "name": "approve", "outputs": [ { "name": "success", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "totalSupply", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "_from", "type": "address" }, { "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" } ], "name": "transferFrom", "outputs": [ { "name": "success", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "name": "_owner", "type": "address" } ], "name": "balanceOf", "outputs": [ { "name": "balance", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" } ], "name": "transfer", "outputs": [ { "name": "success", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "name": "_owner", "type": "address" }, { "name": "_spender", "type": "address" } ], "name": "allowance", "outputs": [ { "name": "remaining", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "anonymous": false, "inputs": [ { "indexed": true, "name": "_from", "type": "address" }, { "indexed": true, "name": "_to", "type": "address" }, { "indexed": false, "name": "_value", "type": "uint256" } ], "name": "Transfer", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": true, "name": "_owner", "type": "address" }, { "indexed": true, "name": "_spender", "type": "address" }, { "indexed": false, "name": "_value", "type": "uint256" } ], "name": "Approval", "type": "event" }, { "constant": true, "inputs": [], "name": "totalSupply", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "symbol", "outputs": [ { "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "name", "outputs": [ { "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "decimals", "outputs": [ { "name": "", "type": "uint8" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "address" } ], "name": "balances", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_owner", "type": "address" } ], "name": "balanceOf", "outputs": [ { "name": "balance", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "address" }, { "name": "", "type": "address" } ], "name": "allowed", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_owner", "type": "address" }, { "name": "_spender", "type": "address" } ], "name": "allowance", "outputs": [ { "name": "remaining", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "anonymous": false, "inputs": [ { "indexed": true, "name": "_owner", "type": "address" }, { "indexed": true, "name": "_spender", "type": "address" }, { "indexed": false, "name": "_value", "type": "uint256" } ], "name": "Approval", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": true, "name": "_from", "type": "address" }, { "indexed": true, "name": "_to", "type": "address" }, { "indexed": false, "name": "_value", "type": "uint256" } ], "name": "Transfer", "type": "event" }, { "constant": false, "inputs": [ { "name": "_spender", "type": "address" }, { "name": "_value", "type": "uint256" } ], "name": "approve", "outputs": [ { "name": "success", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" } ], "name": "transfer", "outputs": [ { "name": "success", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "_from", "type": "address" }, { "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" } ], "name": "transferFrom", "outputs": [ { "name": "success", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "name": "_initialAmount", "type": "uint256" }, { "name": "_tokenName", "type": "string" }, { "name": "_decimalUnits", "type": "uint8" }, { "name": "_tokenSymbol", "type": "string" } ], "payable": false, "stateMutability": "nonpayable", "type": "constructor" } ];
 
-var addr="0x21d874d519f4277a7d46fd91616cc4f6238f8d93";
+var addr="0x8931024ed383b00154a9f7ce13aa889b96c5806f";
+var coinbase="0x7747747e72f7fe63c79157de2132f98ad2083107";
  var myAddr,myName;
 
-// var my=web3.eth.contract(abi);
-// var p=my.at(addr);
-//var myContract= new  myweb.eth.Contract(abi,addr);
-//var token= new myweb.eth.Contract(abi).at(addr);
-  var myContract=new myweb.eth.Contract(abi,addr);
-  //console.log(my.options);
-  //var myContract =new myweb.eth.Contract(abi).at(addr);
-//console.log(myweb.eth.Contract);
-  //var newCon=   myContract.at(addr);
-//var myContract=new myweb.eth.Contract(abi,addr,{from:myweb.eth.coinbase});
-//console.log(token);
-//console.log(myContract);
+
+  var myContract= new myweb.eth.Contract(abi,addr);
+ //console.log(myContract);
+
 firebase.initializeApp({
-  apiKey: "AIzaSyD8bVeIajJkBAGa1fliiESlKj5FsIVKqbE",
-    authDomain: "food-court-9abb2.firebaseapp.com",
-    databaseURL: "https://food-court-9abb2.firebaseio.com",
-    projectId: "food-court-9abb2",
-    storageBucket: "food-court-9abb2.appspot.com",
-    messagingSenderId: "1047058137826"
+  apiKey: "AIzaSyAC6XBMhlV2XFecuXBa03UefrFRx8x_Ynk",
+    authDomain: "foodcourtsai.firebaseapp.com",
+    databaseURL: "https://foodcourtsai.firebaseio.com",
+    projectId: "foodcourtsai",
+    storageBucket: "foodcourtsai.appspot.com",
+    messagingSenderId: "122258299921"
 });
+// var config = {
+//     apiKey: "AIzaSyD8bVeIajJkBAGa1fliiESlKj5FsIVKqbE",
+//     authDomain: "food-court-9abb2.firebaseapp.com",
+//     databaseURL: "https://food-court-9abb2.firebaseio.com",
+//     projectId: "food-court-9abb2",
+//     storageBucket: "food-court-9abb2.appspot.com",
+//     messagingSenderId: "1047058137826"
+//   };
+//   firebase.initializeApp(config);
+
 var database = firebase.database();
-var ref=database.ref('shop');
-var addRef= ref.child('register');
-var refC=database.ref('Customer');
+var addRef=database.ref('shop');
+var refC=database.ref('User');
+var newRef=refC.child('id');
+var refT=database.ref('Token');
 
-
+//get request for web pages
 router.get('/', function(req, res, next) {
   res.render('index');
 });
@@ -46,7 +50,6 @@ router.get('/register',function(req,res,next){
   res.render('register');
   console.log("register is running");
 });
-
 router.get('/collector',function(req,res,next){
   res.render('collector');
 });
@@ -54,88 +57,116 @@ router.get('/transfer',function(req,res,next){
   res.render('transfer');
 });
 router.get('/success',function(req,res,next){
-
   res.render('success');
 });
 router.get('/success1',function(req,res,next){
-
-  res.render('successs1');
-});
-router.post('/login',function(req,res,next){
-  if(req.body.email=="admin@gmail.com" && req.body.password=="admin@123"){
-    res.redirect('/collector');
-  }
+  res.render('success1');
 });
 
-/* -------------------------------------------------------------run when connect-------------------*/
-// var newAcc;
+
+//saving address to newly added customer in database
+
 // refC.on('child_added',function(result){
-//     var newAcc=result.val().password;
-//     console.log(newAcc);
-//     var newAccAddr=myweb.eth.personal.newAccount(newAcc);
-//      refC.push({
-//        address:newAccAddr,
-//      });
+//      console.log(result.val());
+//     myweb.eth.personal.newAccount(result.val().password).then(function(resp,err){
+//         console.log("account created successfully"+ resp);
+//         refC.child(result.key).update({
+//          address:resp,
+//         });
+//     });
 // });
+
+
+// admin login
+router.post('/login',function(req,res,next){
+   if(req.body.email=="admin@gmail.com" && req.body.password=="admin@123"){
+     console.log("admin loged in");
+     res.redirect('/collector');
+   }
+});
+
+
 router.post('/collector',function(req,res,next){
-refC.on('value',function(snapshot){
-  if(req.body.cid==snapshot.val().ID){
-    res.redirect('/transfer');
-  }
-  else{
-    res.redirect('/collector');
-    console.log("invalid userid");
-  }
-})
-
+   refC.on('value',function(snapshot){
+      details= snapshot.val();
+      var keys=Object.keys(details);
+      var flag=0;
+      for(i=0 ;i<keys.length;i++){
+         var k=keys[i];
+         if(req.body.cid==k){
+            myContract.methods.balanceOf(coinbase).call({from:coinbase},function(err,result){
+               console.log("admin account balance "+result);
+               var total={
+                     bal:result,
+                     id:k,
+               };
+              res.render('transfer',{tot:total});
+           });
+          flag=1;
+          break;
+       }
+     }
+    if(flag==0){
+      res.redirect('/customer');
+      console.log('invalid user');
+    }
+  });
 });
+
 router.post('/register',function(req,res,next){
-
- addRef.push({
-   sname: req.body.sname,
-   id: req.body.sid,
-   name: req.body.name,
-   password:req.body.password,
-   email: req.body.email,
-   phone: req.body.phn
- });
-
- res.redirect('/login');
+    myweb.eth.personal.newAccount(req.body.password).then(function(res,err){
+       addRef.push({
+          sname: req.body.sname,
+          id: req.body.sid,
+          name: req.body.name,
+          password:req.body.password,
+          email: req.body.email,
+          phone: req.body.phn,
+          address: res,
+      });
+   });
+  res.redirect('/success1');
 });
-
-
 
 
 router.post('/transfer',function(req,res,next){
-  myContract.methods.balanceOf("0x8c28785217433c45e0de9d18add7084146d3e48f").call({from:"0x8c28785217433c45e0de9d18add7084146d3e48f"},function(err,res){
-
-    console.log(res);
+   refC.on('value',function(snap){
+        var newDetails=snap.val();
+        var key=Object.keys(newDetails);
+        console.log("Foody transfers to "+newDetails[req.body.myid].address);
+        myweb.eth.personal.unlockAccount(coinbase,"admin");
+        myContract.methods.transfer(newDetails[req.body.myid].address,req.body.token).send({from:coinbase},function(err,txhash){
+            if(err){
+               console.log(err);
+               res.redirect('/transfer');
+              }
+           else
+            {
+              setTimeout(function(){
+                 var transaction={
+                     from: "admin",
+                     to: req.body.myid,
+                     value : req.body.token,
+                     time : new Date(),
+                     tx_info:txhash
+                 };
+                res.render('success',{trans: transaction});
+                myContract.methods.balanceOf(newDetails[req.body.myid].address).call({from:coinbase},function(err,result){
+                   if(err){
+                     console.log(err);
+                   }
+                   else{
+                     refT.push({
+                       id: req.body.myid,
+                       token: result
+                     });
+                     console.log(result +"F balance of account");
+                  }
+               });
+            },80000);
+          }
+     });
   });
-
-//myweb.eth.personal.unlockAccount("0x8c28785217433c45e0de9d18add7084146d3e48f","jatin");
-refC.on('value',function(snap){
-myContract.methods.transferFrom("0x8c28785217433c45e0de9d18add7084146d3e48f",snap.val().address,req.body.token).send({from:"0x8c28785217433c45e0de9d18add7084146d3e48f"},function(err,txhash){
-  if(err){
-    console.log(err);
-    res.redirect('/transfer');
-  }
-else{
-refC.on('value',function(snapshot){
- var transaction={
-    from: "admin",
-    to: snapshot.val().ID,
-    value : req.body.token,
-    time : new Date(),
-    tx_info:txhash
-  };
-  res.render('success',{trans: transaction});
-});
-myContract.methods.balanceOf(snap.val().address).call({from:"0x8c28785217433c45e0de9d18add7084146d3e48f"},function(err,result){
-  console.log(result);
-});
-}
-});
-});
 });
 
 

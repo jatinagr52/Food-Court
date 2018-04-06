@@ -2,18 +2,6 @@
   <head>
 
 <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyD8bVeIajJkBAGa1fliiESlKj5FsIVKqbE",
-    authDomain: "food-court-9abb2.firebaseapp.com",
-    databaseURL: "https://food-court-9abb2.firebaseio.com",
-    projectId: "food-court-9abb2",
-    storageBucket: "",
-    messagingSenderId: "1047058137826"
-  };
-  firebase.initializeApp(config);
-</script>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet'>
     <link href="stylesheets/style.css" rel="stylesheet">
 
@@ -29,7 +17,7 @@
   <body>
     <header>
       <div class="container">
-        <h1 class="title">FOOD COURT</h1>
+
         <a href="/register" class="btn-primary" style="float:right;">Shop Register</a>
   </header>
         <main class="container signup-section">
@@ -43,7 +31,7 @@
                      <label>Customer ID<input type="text" name="cid"></input></label>
 
                     <p class="error-message"></p>
-                       <button class="w3-button w3-border" name="submit" >Submit</button>
+                       <button type="submit" class="w3-button w3-border" name="submit" >Submit</button>
               </div>
             </form>
   </main>
